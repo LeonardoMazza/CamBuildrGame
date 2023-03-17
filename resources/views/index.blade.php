@@ -47,7 +47,6 @@
                         <th class="px-4 py-2 border border-gray-400">Name</th>
                         <th class="px-4 py-2 border border-gray-400">Team Blue</th>
                         <th class="px-4 py-2 border border-gray-400">Team Red</th>
-                        <th class="px-4 py-2 border border-gray-400">Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,8 +56,6 @@
                         <td class="px-4 py-2 border border-gray-400">{{ $game->name }}</td>
                         <td class="px-4 py-2 border border-gray-400 bg-blue-500 text-white">{{ $game->team_blue_score }}</td>
                         <td class="px-4 py-2 border border-gray-400 bg-red-500 text-white">{{ $game->team_red_score }}</td>
-                        <td class="px-4 py-2 border border-gray-400">
-                        </td>
                         <td class="px-4 py-2 border border-gray-400">
                             <a href="{{ route('games.show', $game->id) }}" class="bg-blue-500 text-white py-1 px-2 rounded">View</a>
                         </td>
