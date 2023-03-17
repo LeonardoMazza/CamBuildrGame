@@ -19,7 +19,30 @@
           <th class="px-4 py-2 border border-gray-400">Actions</th>
         </tr>
       </thead>
-
+      <tbody>
+        @foreach ($games as $game)
+          <tr>
+            <td class="px-4 py-2 border border-gray-400">{{ $game->name }}</td>
+            <td class="px-4 py-2 border border-gray-400">{{ $game->team_blue_score }}</td>
+            <td class="px-4 py-2 border border-gray-400">{{ $game->team_red_score }}</td>
+            <td class="px-4 py-2 border border-gray-400">
+              @if ($game->is_active)
+                <span class="bg-green-500 text-white py-1 px-2 rounded">Active</span>
+              @else
+                <span class="bg-red-500 text-white py-1 px-2 rounded">Inactive</span>
+            @endif
+            </td>
+            <td class="px-4 py-2 border border-gray-400">
+              <a href="{{ route('games.edit', $game->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Edit</a>
+              <form action="{{ route('games.destroy', $game->id) }}" method="POST" class="inline">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Delete</button>
+              </form>
+            </td>
+            </tr>
+        @endforeach
+        </tbody>
     </table>
     </div>
 @endsection
