@@ -52,21 +52,18 @@
                 </thead>
                 <tbody>
                     @foreach ($games as $game)
+                    @if ($game->is_active)
                     <tr>
                         <td class="px-4 py-2 border border-gray-400">{{ $game->name }}</td>
                         <td class="px-4 py-2 border border-gray-400 bg-blue-500 text-white">{{ $game->team_blue_score }}</td>
                         <td class="px-4 py-2 border border-gray-400 bg-red-500 text-white">{{ $game->team_red_score }}</td>
                         <td class="px-4 py-2 border border-gray-400">
-                        @if ($game->is_active)
-                            <span class="bg-green-500 text-white py-1 px-2 rounded">Active</span>
-                        @else
-                            <span class="bg-red-500 text-white py-1 px-2 rounded">Inactive</span>
-                        @endif
                         </td>
                         <td class="px-4 py-2 border border-gray-400">
                             <a href="{{ route('games.show', $game->id) }}" class="bg-blue-500 text-white py-1 px-2 rounded">View</a>
                         </td>
                     </tr>
+                    @endif
                     @endforeach
                 </tbody>
             </table>

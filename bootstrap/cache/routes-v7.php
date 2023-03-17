@@ -63,7 +63,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::9ebjVcJ6e7YJsp5m',
+            '_route' => 'generated::AeLTJDAQlOurJk3f',
           ),
           1 => NULL,
           2 => 
@@ -83,7 +83,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Ej3FDOn1E2yNkmS2',
+            '_route' => 'generated::Cl9YIF9qn3A79SpP',
           ),
           1 => NULL,
           2 => 
@@ -161,7 +161,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::SOVjeyYE7PnTem83',
+            '_route' => 'generated::RQgErtz66mm8rcLp',
           ),
           1 => NULL,
           2 => 
@@ -800,7 +800,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::9ebjVcJ6e7YJsp5m' => 
+    'generated::AeLTJDAQlOurJk3f' => 
     array (
       'methods' => 
       array (
@@ -812,7 +812,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@source',
         'controller' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@source',
-        'as' => 'generated::9ebjVcJ6e7YJsp5m',
+        'as' => 'generated::AeLTJDAQlOurJk3f',
       ),
       'fallback' => false,
       'defaults' => 
@@ -828,7 +828,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Ej3FDOn1E2yNkmS2' => 
+    'generated::Cl9YIF9qn3A79SpP' => 
     array (
       'methods' => 
       array (
@@ -840,7 +840,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@maps',
         'controller' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@maps',
-        'as' => 'generated::Ej3FDOn1E2yNkmS2',
+        'as' => 'generated::Cl9YIF9qn3A79SpP',
       ),
       'fallback' => false,
       'defaults' => 
@@ -965,7 +965,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::SOVjeyYE7PnTem83' => 
+    'generated::RQgErtz66mm8rcLp' => 
     array (
       'methods' => 
       array (
@@ -988,7 +988,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::SOVjeyYE7PnTem83',
+        'as' => 'generated::RQgErtz66mm8rcLp',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1151,45 +1151,6 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'dashboard' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'dashboard',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'verified',
-        ),
-        'uses' => 'App\\Http\\Controllers\\DashboardController@index',
-        'controller' => 'App\\Http\\Controllers\\DashboardController@index',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'dashboard',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
     'games.create' => 
     array (
       'methods' => 
@@ -1214,6 +1175,45 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'games.create',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'dashboard',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'verified',
+        ),
+        'uses' => 'App\\Http\\Controllers\\DashboardController@index',
+        'controller' => 'App\\Http\\Controllers\\DashboardController@index',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'dashboard',
       ),
       'fallback' => false,
       'defaults' => 
