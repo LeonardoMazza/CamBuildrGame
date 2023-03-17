@@ -25,6 +25,8 @@ Route::get('/', 'App\Http\Controllers\GameController@index')->name('home');
 Route::get('/games', 'App\Http\Controllers\GameController@index')->name('games');
 Route::get('/games/{game}', 'App\Http\Controllers\GameController@show')->name('games.show');
 
+Route::get('/games/create', 'App\Http\Controllers\GameController@index')->name('teste');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
