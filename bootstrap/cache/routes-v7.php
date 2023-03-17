@@ -63,7 +63,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::lmLGOOocK9foKYPe',
+            '_route' => 'generated::9ebjVcJ6e7YJsp5m',
           ),
           1 => NULL,
           2 => 
@@ -83,7 +83,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::OtChJBmWA6f90Cuh',
+            '_route' => 'generated::Ej3FDOn1E2yNkmS2',
           ),
           1 => NULL,
           2 => 
@@ -161,7 +161,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::BtVTKVSx9jRFpkWo',
+            '_route' => 'generated::SOVjeyYE7PnTem83',
           ),
           1 => NULL,
           2 => 
@@ -182,26 +182,6 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'home',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/games/create' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'games.create',
           ),
           1 => NULL,
           2 => 
@@ -393,7 +373,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/livewire/message/([^/]++)(*:33)|/([^/]++)/livewire/message/([^/]++)(*:75)|/livewire/preview\\-file/([^/]++)(*:114)|/games/([^/]++)(?|(*:140)|/edit(*:153)|(*:161))|/password/reset/([^/]++)(*:194)|/email/verify/([^/]++)/([^/]++)(*:233))/?$}sDu',
+      0 => '{^(?|/livewire/message/([^/]++)(*:33)|/([^/]++)/livewire/message/([^/]++)(*:75)|/livewire/preview\\-file/([^/]++)(*:114)|/games/(?|([^/]++)(?|(*:143)|/vote(*:156))|create(*:171)|([^/]++)(?|/edit(*:195)|(*:203)))|/password/reset/([^/]++)(*:237)|/email/verify/([^/]++)/([^/]++)(*:276))/?$}sDu',
     ),
     3 => 
     array (
@@ -465,7 +445,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      140 => 
+      143 => 
       array (
         0 => 
         array (
@@ -488,7 +468,51 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      153 => 
+      156 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'games.vote',
+          ),
+          1 => 
+          array (
+            0 => 'game',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      171 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'games.create',
+          ),
+          1 => 
+          array (
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      195 => 
       array (
         0 => 
         array (
@@ -511,7 +535,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      161 => 
+      203 => 
       array (
         0 => 
         array (
@@ -552,7 +576,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      194 => 
+      237 => 
       array (
         0 => 
         array (
@@ -575,7 +599,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      233 => 
+      276 => 
       array (
         0 => 
         array (
@@ -776,7 +800,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::lmLGOOocK9foKYPe' => 
+    'generated::9ebjVcJ6e7YJsp5m' => 
     array (
       'methods' => 
       array (
@@ -788,7 +812,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@source',
         'controller' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@source',
-        'as' => 'generated::lmLGOOocK9foKYPe',
+        'as' => 'generated::9ebjVcJ6e7YJsp5m',
       ),
       'fallback' => false,
       'defaults' => 
@@ -804,7 +828,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::OtChJBmWA6f90Cuh' => 
+    'generated::Ej3FDOn1E2yNkmS2' => 
     array (
       'methods' => 
       array (
@@ -816,7 +840,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@maps',
         'controller' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@maps',
-        'as' => 'generated::OtChJBmWA6f90Cuh',
+        'as' => 'generated::Ej3FDOn1E2yNkmS2',
       ),
       'fallback' => false,
       'defaults' => 
@@ -941,7 +965,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::BtVTKVSx9jRFpkWo' => 
+    'generated::SOVjeyYE7PnTem83' => 
     array (
       'methods' => 
       array (
@@ -964,7 +988,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::BtVTKVSx9jRFpkWo',
+        'as' => 'generated::SOVjeyYE7PnTem83',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1002,45 +1026,6 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'home',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'games.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'games/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'verified',
-        ),
-        'uses' => 'App\\Http\\Controllers\\GameController@create',
-        'controller' => 'App\\Http\\Controllers\\GameController@create',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'games.create',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1130,6 +1115,42 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'games.vote' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'games/{game}/vote',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\GameController@vote',
+        'controller' => 'App\\Http\\Controllers\\GameController@vote',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'games.vote',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'dashboard' => 
     array (
       'methods' => 
@@ -1154,6 +1175,45 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'dashboard',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'games.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'games/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'verified',
+        ),
+        'uses' => 'App\\Http\\Controllers\\GameController@create',
+        'controller' => 'App\\Http\\Controllers\\GameController@create',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'games.create',
       ),
       'fallback' => false,
       'defaults' => 

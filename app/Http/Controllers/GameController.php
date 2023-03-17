@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Games;
+use App\Models\Score;
 
 class GameController extends Controller
 {
@@ -77,4 +78,29 @@ class GameController extends Controller
 
         return redirect()->route('dashboard')->with('success', 'Game deleted successfully');
     }
+
+    public function vote($game)
+    {
+
+        $score = new Score();
+        $score->game_id = $game;
+        $score->team_id = request()->team;
+        $score->save();
+
+        $allTeamScores = Score::where('game_id', $game)->where('team_id', request()->team);
+        $teamScore = $allTeamScores->count();
+
+        $game = Games::findOrFail($game);
+        
+        if (request()->team == 1) {
+            $game->team_blue_score = $teamScore;
+        } else {
+            $game->team_red_score = $teamScore;
+        }
+
+        $game->save();
+
+        return redirect()->route('games.show', $game)->with('success', 'Voted successfully');
+    }
+
 }

@@ -48,6 +48,13 @@
         <div class="mb-4">
             <label for="team_blue_score" class="sr-only">Team Blue Score</label>
             <input type="text" name="team_blue_score" id="team_blue_score" placeholder="Team Blue Score" class="bg-blue-100 border-2 w-full p-4 rounded-lg @error('team_blue_score') border-red-500 @enderror" value="{{ $game->team_blue_score }}" disabled>
+            @if ($game->is_active)
+            <form action="{{ route('games.vote', $game->id) }}" method="POST">
+                @csrf
+                <input type="hidden" name="team" value="1">
+                <button class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Vote</button>
+            </form>
+            @endif
             @error('team_blue_score')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
@@ -58,6 +65,13 @@
         <div class="mb-4">
             <label for="team_red_score" class="sr-only">Team Red Score</label>
             <input type="text" name="team_red_score" id="team_red_score" placeholder="Team Red Score" class="bg-red-100 border-2 w-full p-4 rounded-lg @error('team_red_score') border-red-500 @enderror" value="{{ $game->team_red_score }}" disabled>
+            @if ($game->is_active)
+            <form action="{{ route('games.vote', $game->id) }}" method="POST">
+                @csrf
+                <input type="hidden" name="team" value="2">
+                <button class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Vote</button>
+            </form>
+            @endif
             @error('team_red_score')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
