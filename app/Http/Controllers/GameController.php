@@ -30,7 +30,7 @@ class GameController extends Controller
         Games::create($data);
 
         
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success', 'Game created successfully');
     }
 
     public function show($game)
@@ -50,6 +50,11 @@ class GameController extends Controller
 
     public function destroy($game)
     {
-        return redirect()->route('games.index');
+
+        $game = Games::findOrFail($game);
+        $game->delete();
+
+
+        return redirect()->route('dashboard')->with('success', 'Game deleted successfully');
     }
 }
