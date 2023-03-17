@@ -14,12 +14,23 @@ class GameController extends Controller
 
     public function create()
     {
-        return view('games.create');
+        return view('admin.games.create');
     }
 
     public function store()
     {
-        return redirect()->route('games.index');
+
+        $data = request()->validate([
+            'name' => 'required',
+            'team_blue_score' => 'required',
+            'team_red_score' => 'required',
+            'is_active' => 'required',
+        ]);
+
+        Games::create($data);
+
+        
+        return redirect()->route('dashboard');
     }
 
     public function show($game)
