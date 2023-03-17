@@ -1,31 +1,30 @@
 <!-- if is admin show -->
 @if (Auth::user()->is_admin)
-    @extends('layouts.app')
+   
+@extends('layouts.app')
 
-    @section('content')
-        <div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8">
-            <div class="absolute top-0 right-0 mt-4 mr-4">
-                @if (Route::has('login'))
-                    <div class="space-x-4">
-                        @auth
-                            <a
-                                href="{{ route('home') }}"
-                                class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                            >
-                                Visit website
-                            </a>
-                            <a
-                                href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                            >
-                                Log out
-                            </a>
-                        @endauth
-                    </div>
-                @endif
-            </div>
-        </div>
-    @endsection
+@section('content')
+  <div class="flex flex-col justify-center items-center h-screen">
+    <h1 class="text-3xl font-bold mb-4">Game Management</h1>
+    <a href="{{ route('games.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+      Create Game
+    </a>
+    <table class="table-auto border-collapse border border-gray-400">
+      <thead>
+        <tr>
+          <th class="px-4 py-2 border border-gray-400">Name</th>
+          <th class="px-4 py-2 border border-gray-400">Team1</th>
+          <th class="px-4 py-2 border border-gray-400">Team2</th>
+          <th class="px-4 py-2 border border-gray-400">Status</th>
+          <th class="px-4 py-2 border border-gray-400">Actions</th>
+        </tr>
+      </thead>
+
+    </table>
+    </div>
+@endsection
+
+               
+
 
 @endif

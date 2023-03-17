@@ -23,8 +23,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
 
-Route::view('/dashboard', 'admin.index')->name('dashboard');
-
+// Dashboard Group
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+    Route::get('/dashboard/games', 'App\Http\Controllers\GameController@index')->name('games');
+    Route::get('/dashboard/games/create', 'App\Http\Controllers\GameController@create')->name('games.create');
+    Route::post('/dashboard/games', 'App\Http\Controllers\GameController@store')->name('games.store');
+    Route::get('/dashboard/games/{game}', 'App\Http\Controllers\GameController@show')->name('games.show');
+    Route::get('/dashboard/games/{game}/edit', 'App\Http\Controllers\GameController@edit')->name('games.edit');
+    Route::put('/dashboard/games/{game}', 'App\Http\Controllers\GameController@update')->name('games.update');
+    Route::delete('/dashboard/games/{game}', 'App\Http\Controllers\GameController@destroy')->name('games.destroy');
+});
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
