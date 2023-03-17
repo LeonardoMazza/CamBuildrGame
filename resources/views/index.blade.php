@@ -36,34 +36,42 @@
                 </div>
             @endif
         </div>
+            <!-- Game Results -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-4 text-center">Game Results</h1>
 
-        <div class="flex items-center justify-center">
-            <div class="flex flex-col justify-around">
-                <div class="space-y-6">
-                    <a href="{{ route('home') }}">
-                        <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
-                    </a>
-
-                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600">
-                        {{ config('app.name') }}
-                    </h1>
-
-                    <ul class="list-reset">
-                        <li class="inline px-4">
-                            <a href="https://tailwindcss.com" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Tailwind CSS</a>
-                        </li>
-                        <li class="inline px-4">
-                            <a href="https://github.com/alpinejs/alpine" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Alpine.js</a>
-                        </li>
-                        <li class="inline px-4">
-                            <a href="https://laravel.com" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Laravel</a>
-                        </li>
-                        <li class="inline px-4">
-                            <a href="https://laravel-livewire.com" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Livewire</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="overflow-x-auto">
+            <table class="w-full table-auto border-collapse border border-gray-400">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 border border-gray-400">Name</th>
+                        <th class="px-4 py-2 border border-gray-400">Team Red</th>
+                        <th class="px-4 py-2 border border-gray-400">Team Blue</th>
+                        <th class="px-4 py-2 border border-gray-400">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($games as $game)
+                    <tr>
+                        <td class="px-4 py-2 border border-gray-400">{{ $game->name }}</td>
+                        <td class="px-4 py-2 border border-gray-400">{{ $game->team_blue_score }}</td>
+                        <td class="px-4 py-2 border border-gray-400">{{ $game->team_red_score }}</td>
+                        <td class="px-4 py-2 border border-gray-400">
+                        @if ($game->is_active)
+                            <span class="bg-green-500 text-white py-1 px-2 rounded">Active</span>
+                        @else
+                            <span class="bg-red-500 text-white py-1 px-2 rounded">Inactive</span>
+                        @endif
+                        </td>
+                        <td class="px-4 py-2 border border-gray-400">
+                            <a href="{{ route('games.show', $game->id) }}" class="bg-blue-500 text-white py-1 px-2 rounded">View</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
+    </div>
+
 @endsection

@@ -21,18 +21,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', 'App\Http\Controllers\GameController@index')->name('home');
 
-// Dashboard Group
+
+Route::get('/games', 'App\Http\Controllers\GameController@index')->name('games');
+
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
-    Route::get('/dashboard/games', 'App\Http\Controllers\GameController@index')->name('games');
-    Route::get('/dashboard/games/create', 'App\Http\Controllers\GameController@create')->name('games.create');
-    Route::post('/dashboard/games', 'App\Http\Controllers\GameController@store')->name('games.store');
-    Route::get('/dashboard/games/{game}', 'App\Http\Controllers\GameController@show')->name('games.show');
-    Route::get('/dashboard/games/{game}/edit', 'App\Http\Controllers\GameController@edit')->name('games.edit');
-    Route::put('/dashboard/games/{game}', 'App\Http\Controllers\GameController@update')->name('games.update');
-    Route::delete('/dashboard/games/{game}', 'App\Http\Controllers\GameController@destroy')->name('games.destroy');
+    Route::get('/games/create', 'App\Http\Controllers\GameController@create')->name('games.create');
+    Route::post('/games', 'App\Http\Controllers\GameController@store')->name('games.store');
+    Route::get('/games/{game}', 'App\Http\Controllers\GameController@show')->name('games.show');
+    Route::get('/games/{game}/edit', 'App\Http\Controllers\GameController@edit')->name('games.edit');
+    Route::put('/games/{game}', 'App\Http\Controllers\GameController@update')->name('games.update');
+    Route::delete('/games/{game}', 'App\Http\Controllers\GameController@destroy')->name('games.destroy');
 });
 
 Route::middleware('guest')->group(function () {
