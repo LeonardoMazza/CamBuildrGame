@@ -9,7 +9,9 @@ class GameController extends Controller
 {
     public function index()
     {
-     
+        $games = Games::all();
+
+        return view('admin.games.index', compact('games'));
     }
 
     public function create()
@@ -35,17 +37,35 @@ class GameController extends Controller
 
     public function show($game)
     {
-        return view('games.show', compact('game'));
+
+        $game = Games::findOrFail($game);
+
+        return view('admin.games.show', compact('game'));
     }
 
     public function edit($game)
     {
-        return view('games.edit', compact('game'));
+
+        $game = Games::findOrFail($game);
+
+        return view('admin.games.edit', compact('game'));
     }
 
     public function update($game)
     {
-        return redirect()->route('games.show', $game);
+
+        $game = Games::findOrFail($game);
+
+        $data = request()->validate([
+            'name' => 'required',
+            'team_blue_score' => 'required',
+            'team_red_score' => 'required',
+            'is_active' => 'required',
+        ]);
+
+        $game->update($data);
+
+        return redirect()->route('dashboard', $game)->with('success', 'Game updated successfully');
     }
 
     public function destroy($game)
